@@ -1,0 +1,37 @@
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 防止乱码
+mpl.rcParams["font.sans-serif"] = ["SimHei"]
+mpl.rcParams["axes.unicode_minus"] = False
+
+# 生成数据
+x = np.arange(5)
+y = [400,650,564,654,564]
+y1 = [500,487,526,874,485]
+
+bar_width = 0.35
+tick_label = ["1月","2月","3月","4月","5月"]
+
+# 生成多数据并列柱状图
+#plt.bar(x,y,bar_width,color="r",align="center",label="张三业绩",alpha=0.5)
+#plt.bar(x+bar_width,y1,bar_width,color="g",align="center",label="王五业绩",alpha=0.5)
+
+
+
+
+
+# 生成多数据平行柱状图
+plt.barh(x,y,bar_width,color="r",align="center",label="张三业绩",alpha=0.5)
+plt.barh(x+bar_width,y1,bar_width,color="g",align="center",label="王五业绩",alpha=0.5)
+# 设置x,y轴标签
+plt.xlabel("月份")
+plt.ylabel("销售额")
+
+# 设置x轴标签位置
+plt.xticks(x+bar_width/2,tick_label)
+
+plt.legend()
+
+plt.show()
