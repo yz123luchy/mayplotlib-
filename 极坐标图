@@ -1,0 +1,21 @@
+# 创建极坐标轴
+
+s = pd.Series(np.arange(20))
+theta=np.arange(0,2*np.pi,0.02)
+print(s.head())
+print(theta[:10])
+# 创建数据
+
+fig = plt.figure(figsize=(8,4))
+ax1 = plt.subplot(121, projection = 'polar')
+ax2 = plt.subplot(122)
+# 创建极坐标子图
+# 还可以写：ax = fig.add_subplot(111,polar=True)
+
+ax1.plot(theta,theta*3,linestyle = '--',lw=1)  
+ax1.plot(s, linestyle = '--', marker = '.',lw=2)
+ax2.plot(theta,theta*3,linestyle = '--',lw=1)
+ax2.plot(s)
+plt.grid()
+# 创建极坐标图，参数1为角度（弧度制），参数2为value
+# lw → 线宽
